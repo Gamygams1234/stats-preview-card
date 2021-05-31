@@ -1,0 +1,110 @@
+.purple {
+  color: #aa5cdb;
+}
+
+.slightly-transparent {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.content {
+  font-family: "Inter", sans-serif;
+  min-height: calc(100vh - 96px);
+  background-color: #090b1a;
+  padding: 5em 1em;
+}
+.content .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, minmax(300px, auto));
+  border-radius: 1.5em;
+  overflow: hidden;
+}
+.content .grid .right-side::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(152, 66, 211, 0.63);
+}
+.content .grid .right-side {
+  grid-row: 1;
+  position: relative;
+  background-image: url(../images/image-header-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.content .grid .left-side {
+  color: white;
+  grid-row: 2;
+  background-color: #1b1938;
+  line-height: 1.25;
+  padding: 2em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.content .grid .left-side h1 {
+  margin-bottom: 0.5em;
+}
+.content .grid .left-side p {
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+.content .grid .left-side .stats {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.content .grid .left-side .stats .stat h2 {
+  margin-bottom: 0.25em;
+}
+.content .grid .left-side .stats .stat p {
+  font-size: 0.7em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .content .grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(300px, auto);
+  }
+  .content .grid .right-side {
+    background-image: url(../images/image-header-desktop.jpg);
+  }
+  .content .grid .left-side {
+    grid-row: 1;
+    text-align: left;
+  }
+  .content .grid .left-side h1 {
+    margin-bottom: 1em;
+  }
+  .content .grid .left-side p {
+    margin-bottom: 3em;
+  }
+  .content .grid .left-side .stats {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media screen and (min-width: 992px) {
+  .content {
+    padding: 5em 4em;
+  }
+  .content .grid .left-side {
+    padding: 3em;
+  }
+}
